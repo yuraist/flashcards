@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030D21B42FE50046F1D1 /* AppDelegate.swift */; };
-		BE99031021B42FE50046F1D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030F21B42FE50046F1D1 /* ViewController.swift */; };
-		BE99031321B42FE50046F1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99031121B42FE50046F1D1 /* Main.storyboard */; };
+		BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */; };
 		BE99031521B42FE70046F1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99031421B42FE70046F1D1 /* Assets.xcassets */; };
 		BE99031821B42FE70046F1D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99031621B42FE70046F1D1 /* LaunchScreen.storyboard */; };
+		BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032421B43BDE0046F1D1 /* ProfileTableViewController.swift */; };
+		BE99032721B43D650046F1D1 /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032621B43D650046F1D1 /* NewSetViewController.swift */; };
+		BE99032921B43DBD0046F1D1 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032821B43DBD0046F1D1 /* AddCardViewController.swift */; };
+		BE99032B21B43EBD0046F1D1 /* SetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032A21B43EBD0046F1D1 /* SetCollectionViewController.swift */; };
+		BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032C21B43EF60046F1D1 /* StudyViewController.swift */; };
+		BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */; };
+		BE99033121B6FAA10046F1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99033021B6FAA10046F1D1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE99030A21B42FE50046F1D1 /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99030D21B42FE50046F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE99030F21B42FE50046F1D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE99031221B42FE50046F1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		BE99031421B42FE70046F1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE99031721B42FE70046F1D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE99031921B42FE70046F1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE99032421B43BDE0046F1D1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		BE99032621B43D650046F1D1 /* NewSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
+		BE99032821B43DBD0046F1D1 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		BE99032A21B43EBD0046F1D1 /* SetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCollectionViewController.swift; sourceTree = "<group>"; };
+		BE99032C21B43EF60046F1D1 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResultsCollectionViewController.swift; sourceTree = "<group>"; };
+		BE99033021B6FAA10046F1D1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,68 @@
 		BE99030C21B42FE50046F1D1 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				BE99030D21B42FE50046F1D1 /* AppDelegate.swift */,
-				BE99030F21B42FE50046F1D1 /* ViewController.swift */,
-				BE99031121B42FE50046F1D1 /* Main.storyboard */,
+				BE99031F21B4306B0046F1D1 /* Application Delegate */,
+				BE99032121B430870046F1D1 /* Model */,
+				BE99032221B430BB0046F1D1 /* View */,
+				BE99032321B43AB40046F1D1 /* View Model */,
+				BE99032021B4307B0046F1D1 /* Controller */,
+				BE99033221B700450046F1D1 /* UI */,
 				BE99031421B42FE70046F1D1 /* Assets.xcassets */,
-				BE99031621B42FE70046F1D1 /* LaunchScreen.storyboard */,
 				BE99031921B42FE70046F1D1 /* Info.plist */,
 			);
 			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		BE99031F21B4306B0046F1D1 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BE99030D21B42FE50046F1D1 /* AppDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		BE99032021B4307B0046F1D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */,
+				BE99032421B43BDE0046F1D1 /* ProfileTableViewController.swift */,
+				BE99032621B43D650046F1D1 /* NewSetViewController.swift */,
+				BE99032821B43DBD0046F1D1 /* AddCardViewController.swift */,
+				BE99032A21B43EBD0046F1D1 /* SetCollectionViewController.swift */,
+				BE99032C21B43EF60046F1D1 /* StudyViewController.swift */,
+				BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE99032121B430870046F1D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE99032221B430BB0046F1D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE99032321B43AB40046F1D1 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		BE99033221B700450046F1D1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BE99031621B42FE70046F1D1 /* LaunchScreen.storyboard */,
+				BE99033021B6FAA10046F1D1 /* Main.storyboard */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +188,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE99033121B6FAA10046F1D1 /* Main.storyboard in Resources */,
 				BE99031821B42FE70046F1D1 /* LaunchScreen.storyboard in Resources */,
 				BE99031521B42FE70046F1D1 /* Assets.xcassets in Resources */,
-				BE99031321B42FE50046F1D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE99031021B42FE50046F1D1 /* ViewController.swift in Sources */,
+				BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */,
+				BE99032B21B43EBD0046F1D1 /* SetCollectionViewController.swift in Sources */,
+				BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */,
+				BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */,
+				BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */,
+				BE99032721B43D650046F1D1 /* NewSetViewController.swift in Sources */,
+				BE99032921B43DBD0046F1D1 /* AddCardViewController.swift in Sources */,
 				BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +215,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE99031121B42FE50046F1D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE99031221B42FE50046F1D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE99031621B42FE70046F1D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +349,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2HCJ99WYH;
 				INFOPLIST_FILE = Flashcards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2HCJ99WYH;
 				INFOPLIST_FILE = Flashcards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
