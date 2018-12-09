@@ -18,6 +18,9 @@
 		BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032C21B43EF60046F1D1 /* StudyViewController.swift */; };
 		BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */; };
 		BE99033121B6FAA10046F1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99033021B6FAA10046F1D1 /* Main.storyboard */; };
+		BEA2925321BD380100EC413C /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA2925121BD380100EC413C /* Card+CoreDataClass.swift */; };
+		BEA2925421BD380100EC413C /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA2925221BD380100EC413C /* Card+CoreDataProperties.swift */; };
+		BEC6656421B7A37C003452A3 /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEC6656221B7A37C003452A3 /* Flashcards.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		BE99032C21B43EF60046F1D1 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResultsCollectionViewController.swift; sourceTree = "<group>"; };
 		BE99033021B6FAA10046F1D1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BEA2925121BD380100EC413C /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BEA2925221BD380100EC413C /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BEC6656321B7A37C003452A3 /* Flashcards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashcards.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 				BE99033221B700450046F1D1 /* UI */,
 				BE99031421B42FE70046F1D1 /* Assets.xcassets */,
 				BE99031921B42FE70046F1D1 /* Info.plist */,
+				BEC6656221B7A37C003452A3 /* Flashcards.xcdatamodeld */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -103,6 +110,8 @@
 		BE99032121B430870046F1D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEA2925121BD380100EC413C /* Card+CoreDataClass.swift */,
+				BEA2925221BD380100EC413C /* Card+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,9 +211,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */,
+				BEA2925321BD380100EC413C /* Card+CoreDataClass.swift in Sources */,
 				BE99032B21B43EBD0046F1D1 /* SetCollectionViewController.swift in Sources */,
 				BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */,
 				BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */,
+				BEA2925421BD380100EC413C /* Card+CoreDataProperties.swift in Sources */,
+				BEC6656421B7A37C003452A3 /* Flashcards.xcdatamodeld in Sources */,
 				BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */,
 				BE99032721B43D650046F1D1 /* NewSetViewController.swift in Sources */,
 				BE99032921B43DBD0046F1D1 /* AddCardViewController.swift in Sources */,
@@ -402,6 +414,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BEC6656221B7A37C003452A3 /* Flashcards.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BEC6656321B7A37C003452A3 /* Flashcards.xcdatamodel */,
+			);
+			currentVersion = BEC6656321B7A37C003452A3 /* Flashcards.xcdatamodel */;
+			path = Flashcards.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE99030221B42FE50046F1D1 /* Project object */;
 }
