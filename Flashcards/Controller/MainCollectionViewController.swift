@@ -29,19 +29,21 @@ class MainCollectionViewController: UICollectionViewController {
 //    card.frontText = "Baby, don't hurt me!"
 //
 //    saveContext()
-    
     loadSavedData()
   }
   
   var cards = [Card]()
   
   func loadSavedData() {
-    let request = Card.createFetchRequest()
+    let request = Deck.createFetchRequest()
     
     do {
-      cards = try container.viewContext.fetch(request)
-      print("Got \(cards.count) cards")
-      printAllCards()
+      let decks = try container.viewContext.fetch(request)
+      print("Got \(decks.count) decks")
+      
+      if let deck = decks.first {
+        print("The first has \(deck.cards.count) cards")
+      }
     } catch {
       print("Fetch failed")
     }
@@ -51,6 +53,12 @@ class MainCollectionViewController: UICollectionViewController {
     for card in cards {
       print("Card: \(card.backText) - \(card.frontText)")
     }
+    
+//    let deck = Deck(context: container.viewContext)
+//    deck.name = "Songs"
+//    deck.cards = NSSet(array: cards)
+//
+//    saveContext()
   }
   
   func saveContext() {

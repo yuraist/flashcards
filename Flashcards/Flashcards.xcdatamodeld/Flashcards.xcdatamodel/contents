@@ -3,12 +3,17 @@
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="backText" attributeType="String" syncable="YES"/>
         <attribute name="frontText" attributeType="String" syncable="YES"/>
+        <relationship name="deck" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck" syncable="YES"/>
     </entity>
-    <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
+    <entity name="Deck" representedClassName="Deck" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="cards" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="deck" inverseEntity="Card" syncable="YES"/>
+        <fetchIndex name="byNameIndex">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Set" positionX="-54" positionY="9" width="128" height="60"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Deck" positionX="-54" positionY="9" width="128" height="75"/>
     </elements>
 </model>
