@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0A16EF21C03F9200AE73FC /* DecksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */; };
 		BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030D21B42FE50046F1D1 /* AppDelegate.swift */; };
 		BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */; };
 		BE99031521B42FE70046F1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99031421B42FE70046F1D1 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewModel.swift; sourceTree = "<group>"; };
 		BE99030A21B42FE50046F1D1 /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99030D21B42FE50046F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		BE99032321B43AB40046F1D1 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */,
+				BE0A16EF21C03F9200AE73FC /* DecksViewModel.swift in Sources */,
 				BE9E24E221BD625A00E5D758 /* Card+CoreDataClass.swift in Sources */,
 				BE99032B21B43EBD0046F1D1 /* SetCollectionViewController.swift in Sources */,
 				BE9E24E521BD625A00E5D758 /* Deck+CoreDataProperties.swift in Sources */,

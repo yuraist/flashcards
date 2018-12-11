@@ -11,65 +11,41 @@ import CoreData
 
 class MainCollectionViewController: UICollectionViewController {
   
-  var container: NSPersistentContainer!
+  private let cellId = "deckCell"
+  private let viewModel = DecksViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    container = NSPersistentContainer(name: "Flashcards")
-    
-    container.loadPersistentStores { (storeDescription, error) in
-      if let error = error {
-        print("Unresolved error: \(error)")
-      }
-    }
-    
-//    let card = Card(context: container.viewContext)
-//    card.backText = "What is love?"
-//    card.frontText = "Baby, don't hurt me!"
-//
-//    saveContext()
-    loadSavedData()
+    setCollectionViewBackgroundColor()
   }
   
-  var cards = [Card]()
-  
-  func loadSavedData() {
-    let request = Deck.createFetchRequest()
-    
-    do {
-      let decks = try container.viewContext.fetch(request)
-      print("Got \(decks.count) decks")
-      
-      if let deck = decks.first {
-        print("The first has \(deck.cards.count) cards")
-      }
-    } catch {
-      print("Fetch failed")
-    }
+  private func setCollectionViewBackgroundColor() {
+    collectionView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
   }
   
-  func printAllCards() {
-    for card in cards {
-      print("Card: \(card.backText) - \(card.frontText)")
-    }
-    
-//    let deck = Deck(context: container.viewContext)
-//    deck.name = "Songs"
-//    deck.cards = NSSet(array: cards)
-//
-//    saveContext()
+  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return viewModel.decks.count
   }
   
-  func saveContext() {
-    if container.viewContext.hasChanges {
-      do {
-        try container.viewContext.save()
-      } catch {
-        print("An error occured while saving: \(error)")
-      }
-    }
+  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+    
+    return cell
   }
   
 }
 
+extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: view.frame.size.width - 32, height: 85)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 16
+  }
+}
