@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE0A16EF21C03F9200AE73FC /* DecksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */; };
 		BE0A16F121C04B7600AE73FC /* NoDecksBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */; };
+		BE38636421C0D31700F0C3AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636321C0D31700F0C3AB /* UIViewExtension.swift */; };
+		BE38636621C0D39200F0C3AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636521C0D39200F0C3AB /* UIColorExtension.swift */; };
 		BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030D21B42FE50046F1D1 /* AppDelegate.swift */; };
 		BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */; };
 		BE99031521B42FE70046F1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99031421B42FE70046F1D1 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewModel.swift; sourceTree = "<group>"; };
 		BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDecksBackgroundView.swift; sourceTree = "<group>"; };
+		BE38636321C0D31700F0C3AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		BE38636521C0D39200F0C3AB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BE99030A21B42FE50046F1D1 /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99030D21B42FE50046F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE38636221C0D2B000F0C3AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BE38636321C0D31700F0C3AB /* UIViewExtension.swift */,
+				BE38636521C0D39200F0C3AB /* UIColorExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BE99030121B42FE50046F1D1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,11 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				BE99031F21B4306B0046F1D1 /* Application Delegate */,
-				BE99032121B430870046F1D1 /* Model */,
-				BE99032221B430BB0046F1D1 /* View */,
-				BE99032321B43AB40046F1D1 /* View Model */,
-				BE99032021B4307B0046F1D1 /* Controller */,
-				BE99033221B700450046F1D1 /* UI */,
+				BE99032121B430870046F1D1 /* Models */,
+				BE99032221B430BB0046F1D1 /* Views */,
+				BE99032321B43AB40046F1D1 /* ViewModels */,
+				BE99032021B4307B0046F1D1 /* Controllers */,
+				BE99033221B700450046F1D1 /* Interface Builders */,
+				BE38636221C0D2B000F0C3AB /* Helpers */,
 				BE99031421B42FE70046F1D1 /* Assets.xcassets */,
 				BE99031921B42FE70046F1D1 /* Info.plist */,
 				BEC6656221B7A37C003452A3 /* Flashcards.xcdatamodeld */,
@@ -101,7 +115,7 @@
 			path = "Application Delegate";
 			sourceTree = "<group>";
 		};
-		BE99032021B4307B0046F1D1 /* Controller */ = {
+		BE99032021B4307B0046F1D1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */,
@@ -112,10 +126,10 @@
 				BE99032C21B43EF60046F1D1 /* StudyViewController.swift */,
 				BE99032E21B43F150046F1D1 /* StudyResultsCollectionViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		BE99032121B430870046F1D1 /* Model */ = {
+		BE99032121B430870046F1D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BE9E24DE21BD625A00E5D758 /* Card+CoreDataClass.swift */,
@@ -123,32 +137,32 @@
 				BE9E24E021BD625A00E5D758 /* Deck+CoreDataClass.swift */,
 				BE9E24E121BD625A00E5D758 /* Deck+CoreDataProperties.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		BE99032221B430BB0046F1D1 /* View */ = {
+		BE99032221B430BB0046F1D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		BE99032321B43AB40046F1D1 /* View Model */ = {
+		BE99032321B43AB40046F1D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BE99033221B700450046F1D1 /* UI */ = {
+		BE99033221B700450046F1D1 /* Interface Builders */ = {
 			isa = PBXGroup;
 			children = (
 				BE99031621B42FE70046F1D1 /* LaunchScreen.storyboard */,
 				BE99033021B6FAA10046F1D1 /* Main.storyboard */,
 			);
-			path = UI;
+			path = "Interface Builders";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,12 +236,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE38636621C0D39200F0C3AB /* UIColorExtension.swift in Sources */,
 				BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */,
 				BE0A16EF21C03F9200AE73FC /* DecksViewModel.swift in Sources */,
 				BE9E24E221BD625A00E5D758 /* Card+CoreDataClass.swift in Sources */,
 				BE99032B21B43EBD0046F1D1 /* DeckCollectionViewController.swift in Sources */,
 				BE9E24E521BD625A00E5D758 /* Deck+CoreDataProperties.swift in Sources */,
 				BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */,
+				BE38636421C0D31700F0C3AB /* UIViewExtension.swift in Sources */,
 				BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */,
 				BE9E24E321BD625A00E5D758 /* Card+CoreDataProperties.swift in Sources */,
 				BEC6656421B7A37C003452A3 /* Flashcards.xcdatamodeld in Sources */,
