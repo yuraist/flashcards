@@ -1,5 +1,5 @@
 //
-//  NewSetViewController.swift
+//  DeckCollectionViewController.swift
 //  Flashcards
 //
 //  Created by Юрий Истомин on 02/12/2018.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NewSetViewController: UIViewController {
+class DeckCollectionViewController: UICollectionViewController {
   
 }
