@@ -14,16 +14,28 @@ class MainCollectionViewController: UICollectionViewController {
   private let cellId = "deckCell"
   private let viewModel = DecksViewModel()
   
+  private let noDecksBackgroundView = NoDecksBackgroundView(frame: .zero)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setCollectionViewBackgroundColor()
+    addCollectionViewBackgroundView()
   }
   
   private func setCollectionViewBackgroundColor() {
     collectionView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
   }
+ 
+  private func addCollectionViewBackgroundView() {
+    collectionView.backgroundView = noDecksBackgroundView
+  }
   
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension MainCollectionViewController {
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.decks.count
   }
@@ -35,6 +47,8 @@ class MainCollectionViewController: UICollectionViewController {
   }
   
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

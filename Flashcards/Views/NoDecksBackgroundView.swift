@@ -21,8 +21,9 @@ class NoDecksBackgroundView: UIView {
   }()
   
   let createButton: UIButton = {
-    let button = UIButton()
+    let button = UIButton(type: .system)
     button.setTitle("Create", for: .normal)
+    button.titleLabel!.font = UIFont.systemFont(ofSize: 17)
     button.contentHorizontalAlignment = .center
     button.setTranslatesAutoresizingMaskIntoConstraintsFalse()
     return button
@@ -41,12 +42,12 @@ class NoDecksBackgroundView: UIView {
   
   private func setConstraintsForSubviews() {
     messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-    messageLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+    messageLabel.bottomAnchor.constraint(equalTo: centerYAnchor, constant: -8).isActive = true
+    messageLabel.widthAnchor.constraint(equalToConstant: 240).isActive = true
     messageLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
     
     createButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    createButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 8).isActive = true
+    createButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 16).isActive = true
     createButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
     createButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
   }
