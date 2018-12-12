@@ -12,23 +12,42 @@ class NoDecksBackgroundView: UIView {
   
   let messageLabel: UILabel = {
     let label = UILabel()
-    
+    label.text = "No Decks. Create a new one?"
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.textColor = FlashcardsColors.gray
+    label.setTranslatesAutoresizingMaskIntoConstraintsFalse()
     return label
   }()
   
   let createButton: UIButton = {
     let button = UIButton()
-    
+    button.setTitle("Create", for: .normal)
+    button.contentHorizontalAlignment = .center
+    button.setTranslatesAutoresizingMaskIntoConstraintsFalse()
     return button
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    
+    addSubviews(messageLabel, createButton)
+    setConstraintsForSubviews()
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  private func setConstraintsForSubviews() {
+    messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+    messageLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+    messageLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    
+    createButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    createButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 8).isActive = true
+    createButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    createButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
   }
 }
