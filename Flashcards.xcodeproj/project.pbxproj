@@ -11,6 +11,8 @@
 		BE0A16F121C04B7600AE73FC /* NoDecksBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */; };
 		BE38636421C0D31700F0C3AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636321C0D31700F0C3AB /* UIViewExtension.swift */; };
 		BE38636621C0D39200F0C3AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636521C0D39200F0C3AB /* UIColorExtension.swift */; };
+		BE38636821C190EB00F0C3AB /* NewDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636721C190EB00F0C3AB /* NewDeckViewModel.swift */; };
+		BE38636A21C1914E00F0C3AB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38636921C1914E00F0C3AB /* Observable.swift */; };
 		BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030D21B42FE50046F1D1 /* AppDelegate.swift */; };
 		BE99031021B42FE50046F1D1 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */; };
 		BE99031521B42FE70046F1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99031421B42FE70046F1D1 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDecksBackgroundView.swift; sourceTree = "<group>"; };
 		BE38636321C0D31700F0C3AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		BE38636521C0D39200F0C3AB /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BE38636721C190EB00F0C3AB /* NewDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewModel.swift; sourceTree = "<group>"; };
+		BE38636921C1914E00F0C3AB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BE99030A21B42FE50046F1D1 /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99030D21B42FE50046F1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE99030F21B42FE50046F1D1 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				BE38636321C0D31700F0C3AB /* UIViewExtension.swift */,
 				BE38636521C0D39200F0C3AB /* UIColorExtension.swift */,
+				BE38636921C1914E00F0C3AB /* Observable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0A16EE21C03F9200AE73FC /* DecksViewModel.swift */,
+				BE38636721C190EB00F0C3AB /* NewDeckViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -236,12 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE38636A21C1914E00F0C3AB /* Observable.swift in Sources */,
 				BE38636621C0D39200F0C3AB /* UIColorExtension.swift in Sources */,
 				BE99032521B43BDE0046F1D1 /* ProfileTableViewController.swift in Sources */,
 				BE0A16EF21C03F9200AE73FC /* DecksViewModel.swift in Sources */,
 				BE9E24E221BD625A00E5D758 /* Card+CoreDataClass.swift in Sources */,
 				BE99032B21B43EBD0046F1D1 /* DeckCollectionViewController.swift in Sources */,
 				BE9E24E521BD625A00E5D758 /* Deck+CoreDataProperties.swift in Sources */,
+				BE38636821C190EB00F0C3AB /* NewDeckViewModel.swift in Sources */,
 				BE99032D21B43EF60046F1D1 /* StudyViewController.swift in Sources */,
 				BE38636421C0D31700F0C3AB /* UIViewExtension.swift in Sources */,
 				BE99032F21B43F150046F1D1 /* StudyResultsCollectionViewController.swift in Sources */,

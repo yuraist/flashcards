@@ -21,6 +21,8 @@ class MainCollectionViewController: UICollectionViewController {
     
     setCollectionViewBackgroundColor()
     addCollectionViewBackgroundView()
+    addActionToBackgroundButton()
+    hideBackgroundViewIfDecksCountIsMoreThanZero()
   }
   
   private func setCollectionViewBackgroundColor() {
@@ -31,6 +33,17 @@ class MainCollectionViewController: UICollectionViewController {
     collectionView.backgroundView = noDecksBackgroundView
   }
   
+  private func addActionToBackgroundButton() {
+    noDecksBackgroundView.createButton.addTarget(self, action: #selector(createNewDeck), for: .touchUpInside)
+  }
+  
+  @objc func createNewDeck() {
+    performSegue(withIdentifier: "showNewDeckController", sender: self)
+  }
+  
+  private func hideBackgroundViewIfDecksCountIsMoreThanZero() {
+    noDecksBackgroundView.isHidden = viewModel.decks.count > 0
+  }
 }
 
 // MARK: - UICollectionViewDataSource

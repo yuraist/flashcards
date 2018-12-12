@@ -10,4 +10,44 @@ import UIKit
 
 class NewDeckViewController: UIViewController {
   
+  @IBOutlet weak var deckNameTextField: UITextField!
+  let viewModel = NewDeckViewModel()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    setTextFieldDelegate()
+    setupViewModelBinding()
+  }
+  
+  private func setTextFieldDelegate() {
+    deckNameTextField.delegate = self
+  }
+  
+  private func setupViewModelBinding() {
+    viewModel.deckName.bind { [unowned self] (name) in
+      self.deckNameTextField.text = name
+    }
+  }
+  
+  @IBAction func cancel(_ sender: UIBarButtonItem) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+}
+
+extension NewDeckViewController: UITextFieldDelegate {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    
+    let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+    viewModel.update(deckName: newString)
+    
+    return false
+  }
+}
+
+extension NewDeckViewController {
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    return true
+  }
 }
