@@ -14,3 +14,10 @@ extension UIColor {
     return UIColor(red: r/maxColorValue, green: g/maxColorValue, blue: b/maxColorValue, alpha: 1.0)
   }
 }
+
+enum FlashcardsColors {
+  static let grayBackground = UIColor.rgb(239, 239, 244)
+  static let greenSuccess = UIColor.rgb(76, 217, 100)
+  static let redFailure = UIColor.rgb(255, 45, 85)
+  static let blueButton = UIColor.rgb(0, 88, 183)
+}
