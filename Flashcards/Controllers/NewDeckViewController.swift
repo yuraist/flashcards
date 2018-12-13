@@ -10,8 +10,10 @@ import UIKit
 
 class NewDeckViewController: UIViewController {
   
-  @IBOutlet weak var deckNameTextField: UITextField!
   let viewModel = NewDeckViewModel()
+  
+  @IBOutlet weak var deckNameTextField: UITextField!
+  @IBOutlet weak var nextBarButtonItem: UIBarButtonItem!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +29,13 @@ class NewDeckViewController: UIViewController {
   private func setupViewModelBinding() {
     viewModel.deckName.bind { [unowned self] (name) in
       self.deckNameTextField.text = name
+      
+      self.checkNextButtonIsEnabled()
     }
+  }
+  
+  private func checkNextButtonIsEnabled() {
+    nextBarButtonItem.isEnabled = (deckNameTextField.text!.count > 0)
   }
   
   @IBAction func cancel(_ sender: UIBarButtonItem) {

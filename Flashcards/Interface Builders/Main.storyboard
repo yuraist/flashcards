@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="1106" y="-222"/>
         </scene>
-        <!--Set-->
+        <!--Deck-->
         <scene sceneID="gGW-Rb-xh4">
             <objects>
-                <collectionViewController title="Set" id="mTZ-nX-hLA" customClass="DeckCollectionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Deck" id="mTZ-nX-hLA" customClass="DeckCollectionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HzH-Nd-ik8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="4073" y="-922"/>
         </scene>
-        <!--Sets-->
+        <!--Decks-->
         <scene sceneID="pIu-Xy-iqk">
             <objects>
                 <collectionViewController id="ah3-Ne-ysB" customClass="MainCollectionViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="ah3-Ne-ysB" id="nzm-K3-ykj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sets" id="gPE-4y-xyT">
+                    <navigationItem key="navigationItem" title="Decks" id="gPE-4y-xyT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fjC-BF-XLs">
                             <connections>
                                 <segue destination="83X-rY-bWG" kind="showDetail" identifier="showNewDeckController" id="nwn-Ej-lFx"/>
@@ -165,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="1846" y="-223"/>
         </scene>
-        <!--New Set-->
+        <!--New Deck-->
         <scene sceneID="VLy-vZ-oiF">
             <objects>
                 <viewController id="PEA-Jq-3qc" customClass="NewDeckViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVL-wa-DTv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Set" id="aag-gG-1F5">
+                    <navigationItem key="navigationItem" title="New Deck" id="aag-gG-1F5">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="jvK-36-TqB">
                             <connections>
                                 <action selector="cancel:" destination="PEA-Jq-3qc" id="oaN-Sx-6LI"/>
@@ -205,6 +205,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deckNameTextField" destination="n7w-Bl-ITp" id="wbl-Ir-54w"/>
+                        <outlet property="nextBarButtonItem" destination="71W-mZ-DKL" id="Hmf-Ge-ZsT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVA-3Q-Urr" userLabel="First Responder" sceneMemberID="firstResponder"/>
