@@ -10,12 +10,25 @@ import Foundation
 
 class NewDeckViewModel {
   
-  var deck = Deck(context: AppDelegate.viewContext)
-  var deckName = Observable("")
+  private let deck = Deck(context: AppDelegate.viewContext)
+  let deckName = Observable("")
 }
 
 extension NewDeckViewModel {
+  
+  var hasValidDeckName: Bool {
+    return deckName.value.count > 0
+  }
+  
   func update(deckName name: String) {
     deckName.value = name
+  }
+  
+  func createDeck() {
+    if hasValidDeckName {
+      deck.name = deckName.value
+      
+      AppDelegate.saveContext()
+    }
   }
 }

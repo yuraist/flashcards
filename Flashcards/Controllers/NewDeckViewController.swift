@@ -35,7 +35,7 @@ class NewDeckViewController: UIViewController {
   }
   
   private func checkNextButtonIsEnabled() {
-    nextBarButtonItem.isEnabled = (deckNameTextField.text!.count > 0)
+    nextBarButtonItem.isEnabled = viewModel.hasValidDeckName
   }
   
   @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -56,6 +56,9 @@ extension NewDeckViewController: UITextFieldDelegate {
 
 extension NewDeckViewController {
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    
+    viewModel.createDeck()
+    
     return true
   }
 }

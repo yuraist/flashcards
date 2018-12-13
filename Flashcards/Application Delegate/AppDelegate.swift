@@ -62,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return persistentContainer.viewContext
   }
   
+  static func saveContext() {
+    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+  }
+  
   // MARK: - Core Data Saving support
   
   func saveContext () {
