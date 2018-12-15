@@ -19,10 +19,22 @@ class MainCollectionViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupTabBar()
+    
     setCollectionViewBackgroundColor()
     addCollectionViewBackgroundView()
     addActionToBackgroundButton()
     hideBackgroundViewIfDecksCountIsMoreThanZero()
+  }
+  
+  private func setupTabBar() {
+    if let mainTabBarItem = tabBarController?.tabBar.items?.first {
+      mainTabBarItem.image = UIImage(named: "cards")?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    if let profileTabBarItem = tabBarController?.tabBar.items?.last {
+      profileTabBarItem.image = UIImage(named: "profile")?.withRenderingMode(.alwaysTemplate)
+    }
   }
   
   private func setCollectionViewBackgroundColor() {
