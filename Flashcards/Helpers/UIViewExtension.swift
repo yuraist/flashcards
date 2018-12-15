@@ -20,4 +20,23 @@ extension UIView {
     translatesAutoresizingMaskIntoConstraints = false
   }
   
+  func setWhiteBackgroundColor() {
+    backgroundColor = FlashcardsColors.white
+  }
+  
+  func setGrayBackgroundColor() {
+    backgroundColor = FlashcardsColors.grayBackground
+  }
+  
+}
+
+enum BaseConstraints {
+  static let largeMargin:   CGFloat = 16
+  static let mediumMargin:  CGFloat = 8
+  static let smallMargin:   CGFloat = 4
+  
+  static let largeTextHeight:     CGFloat = 30
+  static let standardTextHeight:  CGFloat = 20
+  
+  static let cellCornerRadius: CGFloat = 5
 }

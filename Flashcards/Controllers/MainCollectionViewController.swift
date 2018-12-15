@@ -27,6 +27,16 @@ class MainCollectionViewController: UICollectionViewController {
     hideBackgroundViewIfDecksCountIsMoreThanZero()
   }
   
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    updateCollectionViewLayout()
+  }
+  
+  private func updateCollectionViewLayout() {
+    collectionView.collectionViewLayout.invalidateLayout()
+  }
+  
   private func setupTabBar() {
     if let mainTabBarItem = tabBarController?.tabBar.items?.first {
       mainTabBarItem.image = UIImage(named: "cards")?.withRenderingMode(.alwaysTemplate)
@@ -38,7 +48,7 @@ class MainCollectionViewController: UICollectionViewController {
   }
   
   private func setCollectionViewBackgroundColor() {
-    collectionView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+    collectionView.setGrayBackgroundColor()
   }
  
   private func addCollectionViewBackgroundView() {
@@ -66,7 +76,12 @@ extension MainCollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! DeckCollectionViewCell
+    
+    let deck = viewModel.decks[indexPath.item]
+    
+    cell.cellNameLabel.text = deck.name
+    cell.numberOfCardsLabel.text = "\(deck.cards.count) cards"
     
     return cell
   }
@@ -76,6 +91,7 @@ extension MainCollectionViewController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: view.frame.size.width - 32, height: 85)
   }
