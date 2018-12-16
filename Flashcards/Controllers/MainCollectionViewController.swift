@@ -21,8 +21,10 @@ class MainCollectionViewController: UICollectionViewController {
     
     setupTabBar()
     
-    setCollectionViewBackgroundColor()
+    setCollectionViewConstraints()
+    setBackgroundColor()
     addCollectionViewBackgroundView()
+    
     addActionToBackgroundButton()
     hideBackgroundViewIfDecksCountIsMoreThanZero()
   }
@@ -37,6 +39,15 @@ class MainCollectionViewController: UICollectionViewController {
     collectionView.collectionViewLayout.invalidateLayout()
   }
   
+  private func setCollectionViewConstraints() {
+    collectionView.setTranslatesAutoresizingMaskIntoConstraintsFalse()
+    
+    collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+    collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+  }
+  
   private func setupTabBar() {
     if let mainTabBarItem = tabBarController?.tabBar.items?.first {
       mainTabBarItem.image = UIImage(named: "cards")?.withRenderingMode(.alwaysTemplate)
@@ -47,7 +58,8 @@ class MainCollectionViewController: UICollectionViewController {
     }
   }
   
-  private func setCollectionViewBackgroundColor() {
+  private func setBackgroundColor() {
+    view.setGrayBackgroundColor()
     collectionView.setGrayBackgroundColor()
   }
  
@@ -93,11 +105,11 @@ extension MainCollectionViewController {
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: view.frame.size.width - 32, height: 85)
+    return CGSize(width: collectionView.frame.size.width - 32, height: 85)
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+    return UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
