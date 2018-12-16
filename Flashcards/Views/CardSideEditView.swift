@@ -22,6 +22,7 @@ class CardSideEditView: UIView {
   let textView: UITextView = {
     let textView = UITextView()
     textView.isEditable = true
+    textView.textColor = FlashcardsColors.lightGray
     textView.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     textView.setTranslatesAutoresizingMaskIntoConstraintsFalse()
     return textView
@@ -36,6 +37,7 @@ class CardSideEditView: UIView {
     setCornerRadius()
     
     addSubview(textView)
+    setTextViewPlaceholder()
     setConstraintsForTextView()
   }
   
@@ -46,6 +48,10 @@ class CardSideEditView: UIView {
   private func setCornerRadius() {
     layer.cornerRadius = BaseConstraints.cellCornerRadius
     layer.masksToBounds = true
+  }
+  
+  private func setTextViewPlaceholder() {
+    textView.text = side == .front ? CardSideEditView.frontPlaceholder : CardSideEditView.backPlaceholder
   }
   
   private func setConstraintsForTextView() {

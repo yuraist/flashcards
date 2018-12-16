@@ -12,6 +12,9 @@ class NewDeckViewModel {
   
   private let deck = Deck(context: AppDelegate.viewContext)
   let deckName = Observable("")
+  
+  let frontCardSideText = Observable("")
+  let backCardSideText = Observable("")
 }
 
 extension NewDeckViewModel {
@@ -30,5 +33,17 @@ extension NewDeckViewModel {
       
       AppDelegate.saveContext()
     }
+  }
+  
+  func saveCard() {
+    let card = Card(context: AppDelegate.viewContext)
+    card.frontText = frontCardSideText.value
+    card.backText = backCardSideText.value
+    
+    deck.addToCards(card)
+  }
+  
+  func saveDeck() {
+    AppDelegate.saveContext()
   }
 }

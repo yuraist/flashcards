@@ -21,6 +21,7 @@ enum FlashcardsColors {
   static let redFailure = UIColor.rgb(255, 45, 85)
   static let blueButton = UIColor.rgb(0, 88, 183)
   
+  static let lightGray = UIColor.lightGray
   static let gray = UIColor.gray
   static let white = UIColor.white
   static let black = UIColor.black

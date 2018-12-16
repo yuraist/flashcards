@@ -33,6 +33,8 @@ class AddCardViewController: UIViewController {
     setGrayBackgroundColor()
     addSubviews()
     setConstraintsForSubviews()
+    setTextViewsDelegates()
+    setupViewModelBinding()
   }
   
   private func setGrayBackgroundColor() {
@@ -62,11 +64,34 @@ class AddCardViewController: UIViewController {
     frontCardSideView.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor).isActive = true
     frontCardSideView.heightAnchor.constraint(equalTo: backCardSideView.heightAnchor).isActive = true
   }
+  
+  private func setTextViewsDelegates() {
+    frontCardSideView.textView.delegate = self
+    backCardSideView.textView.delegate = self
+  }
+  
+  private func setupViewModelBinding() {
+  
+  }
 }
 
 extension AddCardViewController: UITextViewDelegate {
-  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-    
-    return true
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.textColor == FlashcardsColors.lightGray {
+      textView.text = nil
+      textView.textColor = FlashcardsColors.black
+    }
+  }
+  
+  func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text.isEmpty {
+      textView.textColor = FlashcardsColors.lightGray
+      
+      if textView.isEqual(frontCardSideView.textView) {
+        textView.text = CardSideEditView.frontPlaceholder
+      } else {
+        textView.text = CardSideEditView.backPlaceholder
+      }
+    }
   }
 }
