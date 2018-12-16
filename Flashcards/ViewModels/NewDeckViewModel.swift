@@ -35,6 +35,14 @@ extension NewDeckViewModel {
     }
   }
   
+  func updateFrontCardSideText(withString string: String) {
+    frontCardSideText.value = string
+  }
+  
+  func updateBackCardSideText(withString string: String) {
+    backCardSideText.value = string
+  }
+  
   func saveCard() {
     let card = Card(context: AppDelegate.viewContext)
     card.frontText = frontCardSideText.value

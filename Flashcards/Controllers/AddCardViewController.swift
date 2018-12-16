@@ -30,11 +30,17 @@ class AddCardViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setNavigationBarButtonItem()
     setGrayBackgroundColor()
     addSubviews()
     setConstraintsForSubviews()
     setTextViewsDelegates()
     setupViewModelBinding()
+  }
+  
+  private func setNavigationBarButtonItem() {
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveDeck))
+    navigationItem.rightBarButtonItem!.isEnabled = false
   }
   
   private func setGrayBackgroundColor() {
@@ -71,7 +77,47 @@ class AddCardViewController: UIViewController {
   }
   
   private func setupViewModelBinding() {
+    viewModel.frontCardSideText.bind { [unowned self] (text) in
+      if text.count > 0 && self.viewModel.backCardSideText.value.count > 0 {
+        self.showAddButton()
+        self.enableSaveBarButtonItem()
+      } else {
+        self.hideAddButton()
+        self.disableSaveBarButtonItem()
+      }
+    }
+    
+    viewModel.backCardSideText.bind { [unowned self] (text) in
+      if text.count > 0 && self.viewModel.frontCardSideText.value.count > 0 {
+        self.showAddButton()
+        self.enableSaveBarButtonItem()
+      } else {
+        self.hideAddButton()
+        self.disableSaveBarButtonItem()
+      }
+    }
+  }
   
+  private func showAddButton() {
+    saveAndAddOneMoreCardButton.isHidden = false
+  }
+  
+  private func hideAddButton() {
+    saveAndAddOneMoreCardButton.isHidden = true
+  }
+  
+  private func enableSaveBarButtonItem() {
+    navigationItem.rightBarButtonItem?.isEnabled = true
+  }
+  
+  private func disableSaveBarButtonItem() {
+    navigationItem.rightBarButtonItem?.isEnabled = false
+  }
+  
+  @objc func saveDeck() {
+    viewModel.saveCard()
+    viewModel.saveDeck()
+    dismiss(animated: true, completion: nil)
   }
 }
 
@@ -85,13 +131,23 @@ extension AddCardViewController: UITextViewDelegate {
   
   func textViewDidEndEditing(_ textView: UITextView) {
     if textView.text.isEmpty {
-      textView.textColor = FlashcardsColors.lightGray
-      
+      setPlaceholder(toTextView: textView)
+    } else {
       if textView.isEqual(frontCardSideView.textView) {
-        textView.text = CardSideEditView.frontPlaceholder
+        viewModel.updateFrontCardSideText(withString: textView.text)
       } else {
-        textView.text = CardSideEditView.backPlaceholder
+        viewModel.updateBackCardSideText(withString: textView.text)
       }
+    }
+  }
+  
+  func setPlaceholder(toTextView textView: UITextView) {
+    textView.textColor = FlashcardsColors.lightGray
+    
+    if textView.isEqual(frontCardSideView.textView) {
+      textView.text = CardSideEditView.frontPlaceholder
+    } else {
+      textView.text = CardSideEditView.backPlaceholder
     }
   }
 }
