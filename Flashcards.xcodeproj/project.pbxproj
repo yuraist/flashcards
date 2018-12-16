@@ -29,6 +29,7 @@
 		BE9E24E421BD625A00E5D758 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E24E021BD625A00E5D758 /* Deck+CoreDataClass.swift */; };
 		BE9E24E521BD625A00E5D758 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E24E121BD625A00E5D758 /* Deck+CoreDataProperties.swift */; };
 		BEB9132621C4D5CC00C19C83 /* DeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB9132521C4D5CC00C19C83 /* DeckCollectionViewCell.swift */; };
+		BEB9132821C57DD000C19C83 /* CardSideEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB9132721C57DD000C19C83 /* CardSideEditView.swift */; };
 		BEC6656421B7A37C003452A3 /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEC6656221B7A37C003452A3 /* Flashcards.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		BE9E24E021BD625A00E5D758 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE9E24E121BD625A00E5D758 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BEB9132521C4D5CC00C19C83 /* DeckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCollectionViewCell.swift; sourceTree = "<group>"; };
+		BEB9132721C57DD000C19C83 /* CardSideEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSideEditView.swift; sourceTree = "<group>"; };
 		BEC6656321B7A37C003452A3 /* Flashcards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashcards.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 			children = (
 				BE0A16F021C04B7600AE73FC /* NoDecksBackgroundView.swift */,
 				BEB9132521C4D5CC00C19C83 /* DeckCollectionViewCell.swift */,
+				BEB9132721C57DD000C19C83 /* CardSideEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				BE99032921B43DBD0046F1D1 /* AddCardViewController.swift in Sources */,
 				BE9E24E421BD625A00E5D758 /* Deck+CoreDataClass.swift in Sources */,
 				BE99030E21B42FE50046F1D1 /* AppDelegate.swift in Sources */,
+				BEB9132821C57DD000C19C83 /* CardSideEditView.swift in Sources */,
 				BE0A16F121C04B7600AE73FC /* NoDecksBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -56,9 +56,13 @@ extension NewDeckViewController: UITextFieldDelegate {
 
 extension NewDeckViewController {
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    
     viewModel.createDeck()
-    
     return true
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destinationController = segue.destination as? AddCardViewController {
+      destinationController.viewModel = viewModel
+    }
   }
 }

@@ -38,5 +38,8 @@ enum BaseConstraints {
   static let largeTextHeight:     CGFloat = 30
   static let standardTextHeight:  CGFloat = 20
   
-  static let cellCornerRadius: CGFloat = 5
+  static let cellCornerRadius:    CGFloat = 5
+  static let buttonCornerRadius:  CGFloat = 25
+  
+  static let buttonHeight: CGFloat = 50
 }
