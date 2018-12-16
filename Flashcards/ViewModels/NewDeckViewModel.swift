@@ -23,6 +23,10 @@ extension NewDeckViewModel {
     return deckName.value.count > 0
   }
   
+  var cardsCount: Int {
+    return deck.cards.count
+  }
+  
   func update(deckName name: String) {
     deckName.value = name
   }
@@ -31,7 +35,7 @@ extension NewDeckViewModel {
     if hasValidDeckName {
       deck.name = deckName.value
       
-      AppDelegate.saveContext()
+//      AppDelegate.saveContext()
     }
   }
   
@@ -44,14 +48,24 @@ extension NewDeckViewModel {
   }
   
   func saveCard() {
-    let card = Card(context: AppDelegate.viewContext)
-    card.frontText = frontCardSideText.value
-    card.backText = backCardSideText.value
-    
-    deck.addToCards(card)
+    if frontCardSideText.value.count > 0 && backCardSideText.value.count > 0 {
+      let card = Card(context: AppDelegate.viewContext)
+      card.frontText = frontCardSideText.value
+      card.backText = backCardSideText.value
+      
+      deck.addToCards(card)
+      cleanTexts()
+    }
   }
   
   func saveDeck() {
     AppDelegate.saveContext()
+  }
+}
+
+extension NewDeckViewModel {
+  private func cleanTexts() {
+    frontCardSideText.value = ""
+    backCardSideText.value = ""
   }
 }

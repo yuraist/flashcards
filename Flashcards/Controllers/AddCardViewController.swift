@@ -30,15 +30,23 @@ class AddCardViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setNavigationBarButtonItem()
+    // TODO: - Remove the Gesture and add keyboard observing
+    view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    
+    setSaveBarButtonItem()
     setGrayBackgroundColor()
     addSubviews()
     setConstraintsForSubviews()
     setTextViewsDelegates()
+    setSaveAndAddOneMoreCardButtonAction()
     setupViewModelBinding()
   }
   
-  private func setNavigationBarButtonItem() {
+  @objc private func hideKeyboard() {
+    view.endEditing(true)
+  }
+  
+  private func setSaveBarButtonItem() {
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveDeck))
     navigationItem.rightBarButtonItem!.isEnabled = false
   }
@@ -76,6 +84,10 @@ class AddCardViewController: UIViewController {
     backCardSideView.textView.delegate = self
   }
   
+  private func setSaveAndAddOneMoreCardButtonAction() {
+    saveAndAddOneMoreCardButton.addTarget(self, action: #selector(saveCard), for: .touchUpInside)
+  }
+  
   private func setupViewModelBinding() {
     viewModel.frontCardSideText.bind { [unowned self] (text) in
       if text.count > 0 && self.viewModel.backCardSideText.value.count > 0 {
@@ -111,7 +123,26 @@ class AddCardViewController: UIViewController {
   }
   
   private func disableSaveBarButtonItem() {
-    navigationItem.rightBarButtonItem?.isEnabled = false
+    if viewModel.cardsCount == 0 {
+      navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+  }
+  
+  @objc func saveCard() {
+    viewModel.saveCard()
+    cleanTextViews()
+    updateNavigationTitle()
+  }
+  
+  private func updateNavigationTitle() {
+    navigationItem.title = "Add Card \(viewModel.cardsCount + 1)"
+  }
+  
+  func cleanTextViews() {
+    setPlaceholder(toTextView: frontCardSideView.textView)
+    setPlaceholder(toTextView: backCardSideView.textView)
+    
+    view.endEditing(true)
   }
   
   @objc func saveDeck() {
