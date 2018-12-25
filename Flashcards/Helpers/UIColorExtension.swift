@@ -9,21 +9,21 @@
 import UIKit
 
 extension UIColor {
-  public static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
-    let maxColorValue: CGFloat = 255.0
-    return UIColor(red: r/maxColorValue, green: g/maxColorValue, blue: b/maxColorValue, alpha: 1.0)
-  }
+    public static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
+        let maxColorValue: CGFloat = 255.0
+        return UIColor(red: r/maxColorValue, green: g/maxColorValue, blue: b/maxColorValue, alpha: 1.0)
+    }
 }
 
 enum FlashcardsColors {
-  static let grayBackground = UIColor.rgb(239, 239, 244)
-  static let greenSuccess = UIColor.rgb(76, 217, 100)
-  static let redFailure = UIColor.rgb(255, 45, 85)
-  static let blueButton = UIColor.rgb(0, 88, 183)
-  
-  static let lightGray = UIColor.lightGray
-  static let gray = UIColor.gray
-  static let white = UIColor.white
-  static let black = UIColor.black
-  static let blue = UIColor.blue
+    static let grayBackground = UIColor.rgb(239, 239, 244)
+    static let greenSuccess = UIColor.rgb(76, 217, 100)
+    static let redFailure = UIColor.rgb(255, 45, 85)
+    static let blueButton = UIColor.rgb(0, 88, 183)
+    
+    static let lightGray = UIColor.lightGray
+    static let gray = UIColor.gray
+    static let white = UIColor.white
+    static let black = UIColor.black
+    static let blue = UIColor.blue
 }

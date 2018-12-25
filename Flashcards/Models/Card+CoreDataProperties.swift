@@ -12,13 +12,15 @@ import CoreData
 
 
 extension Card {
-
+    
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<Card> {
         return NSFetchRequest<Card>(entityName: "Card")
     }
-
+    
     @NSManaged public var backText: String
     @NSManaged public var frontText: String
     @NSManaged public var deck: Deck
-
+    
+    
+    
 }
